@@ -1,11 +1,11 @@
 {
-    "name": "Ace - אס מחסן",
-    "short_name": "Ace",
+    "name": "טל",
+    "short_name": "Tal",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#FF5722",
-    "description": "אס - מחסן תכלס",
+    "description": "טל - מחסן תכלס",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
