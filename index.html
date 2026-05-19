@@ -17,13 +17,62 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
+  <meta name="theme-color" content="#201816">
+
   <title>Tal</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    .loading-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #201816;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #433835;
+      border-radius: 50%;
+      border-top-color: #FF5722;
+      animation: spin 2s ease-in-out infinite;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #201816;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(2520deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div id="loading" class="loading-screen">
+    <div class="spinner"></div>
+  </div>
   <script src="coi-serviceworker.js"></script>
   <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    window.addEventListener("flutter-first-frame", function () {
+      var loader = document.getElementById("loading");
+      if (loader) {
+        loader.remove();
+      }
+    });
+  </script>
 </body>
 
 </html>
